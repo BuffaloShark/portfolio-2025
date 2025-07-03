@@ -1,33 +1,33 @@
-import { useState, useEffect } from "react"
-import "./style.css"
-import BackgroundLines from "../BackgroundLines"
-import Button from "../Button"
-import MenuIcon from "../../assets/Icon/menu.svg"
-import ArrowUpRightIcon from "../../assets/Icon/arrow-up-right.svg"
-import headerVideo from "../../assets/headerVideo.webm"
-import TextWriting from "../TextWriting"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import ScrambleText from "../ScrambleText"
-import Time from "../Time"
-import NavMenu from "../NavMenu"
+import { useState, useEffect } from "react";
+import "./style.css";
+import BackgroundLines from "../BackgroundLines";
+import Button from "../Button";
+import MenuIcon from "../../assets/Icon/menu.svg";
+import ArrowUpRightIcon from "../../assets/Icon/arrow-up-right.svg";
+import headerVideo from "../../assets/headerVideo.webm";
+import TextWriting from "../TextWriting";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import ScrambleText from "../ScrambleText";
+import Time from "../Time";
+import NavMenu from "../NavMenu";
 
 export default function Header() {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
-  const [hasAnimated, setHasAnimated] = useState(false)
-  const [menuVisible, setMenuVisible] = useState(false)
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   const handleComplete = () => {
-    setHasAnimated(true)
-  }
+    setHasAnimated(true);
+  };
 
   useEffect(() => {
     // Start animation when the component is in view
     if (inView && !hasAnimated) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [inView, controls])
+  }, [inView, controls]);
 
   const nameVariants = {
     hidden: { scale: 0 },
@@ -40,22 +40,22 @@ export default function Header() {
         delay: 2.85,
       },
     },
-  }
+  };
 
   const opacityVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  }
+    visible: { opacity: .5 },
+  };
 
   const blurVariants = {
     hidden: { opacity: 0, filter: "blur(10px)" },
     visible: { opacity: 1, filter: "blur(0px)" },
-  }
+  };
 
   const handleMenuToggle = () => {
-    console.log("toggle")
-    setMenuVisible((prev) => !prev)
-  }
+    console.log("toggle");
+    setMenuVisible((prev) => !prev);
+  };
 
   return (
     <header ref={ref}>
@@ -63,25 +63,49 @@ export default function Header() {
       <BackgroundLines />
       <NavMenu />
 
-      <motion.div initial="hidden" animate="visible" variants={blurVariants} transition={{ duration: 1, delay: 0.5 }} className="header--menuBtn">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={blurVariants}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="header--menuBtn"
+      >
         <Button icon={MenuIcon} onClick={handleMenuToggle} />
       </motion.div>
 
-      <motion.div initial="hidden" animate={controls} variants={blurVariants} transition={{ duration: 1, delay: 0.5 }} className="header--top">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={blurVariants}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="header--top"
+      >
         <h3>
-          <a href="/" target={"_blank"} rel="noopener noreferrer">
+          <a
+            href="https://github.com/BuffaloShark"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
             <ScrambleText shuffle delay={0.5}>
               GITHUB
             </ScrambleText>
           </a>
           <span className="header--hash">{"//"}</span>
-          <a href="/" target={"_blank"} rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/mikehardy123/"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
             <ScrambleText shuffle delay={1}>
               LINKEDIN
             </ScrambleText>
           </a>
           <span className="header--hash">{"//"}</span>
-          <a href="/" target={"_blank"} rel="noopener noreferrer">
+          <a
+            href="src/assets/MikeHardy-resume.pdf"
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
             <ScrambleText shuffle delay={1.5}>
               RESUME
             </ScrambleText>
@@ -89,7 +113,13 @@ export default function Header() {
         </h3>
       </motion.div>
 
-      <motion.div initial="hidden" animate={controls} variants={blurVariants} transition={{ duration: 1, delay: 4 }} className="header--bottom">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={blurVariants}
+        transition={{ duration: 1, delay: 4 }}
+        className="header--bottom"
+      >
         <div>
           <h3>
             <ScrambleText shuffle delay={4}>
@@ -99,7 +129,10 @@ export default function Header() {
           </h3>
           <p className="theme--detail">
             <ScrambleText shuffle delay={4}>
-              HI! I’m Mike, I tackle complex engineering challenges daily, alongside a team of elite software engineers. My mission is to continuously advance in web development, using my growing expertise to drive societal progress through technology.
+              I am a frontend engineer with a design backbone and a builder’s
+              mindset. I craft fast, intuitive interfaces that look sharp and
+              run even sharper. I’m solving tough frontend challenges alongside
+              some of the best engineers in the game.
             </ScrambleText>
           </p>
         </div>
@@ -109,13 +142,26 @@ export default function Header() {
         </h3>
       </motion.div>
 
-      <motion.div initial="hidden" animate={controls} variants={blurVariants} transition={{ duration: 1, delay: 4.5 }} className="header--center" onAnimationComplete={() => handleComplete()}>
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={blurVariants}
+        transition={{ duration: 1, delay: 4.5 }}
+        className="header--center"
+        onAnimationComplete={() => handleComplete()}
+      >
         <a href="#contact" className="connect--button">
           <Button label="Let’s connect" icon={ArrowUpRightIcon} />
         </a>
       </motion.div>
 
-      <motion.div initial="hidden" animate={controls} variants={blurVariants} transition={{ duration: 1, delay: 2.85 }} className="header--right">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={blurVariants}
+        transition={{ duration: 1, delay: 2.85 }}
+        className="header--right"
+      >
         <h3>
           <span className="header--hash">{"//"}</span>{" "}
           <ScrambleText shuffle delay={2.9}>
@@ -125,16 +171,37 @@ export default function Header() {
         </h3>
       </motion.div>
 
-      <motion.div initial="hidden" animate={controls} variants={opacityVariants} transition={{ duration: 2, delay: 2.85 }} className="header--video">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={opacityVariants}
+        transition={{ duration: 2, delay: 2.85 }}
+        className="header--video"
+      >
         <video src={headerVideo} autoPlay loop muted></video>
       </motion.div>
 
       <h1 className="header--name">
         <TextWriting controls={controls} text={"Mike Hardy"} noblink />
         <br />
-        <TextWriting controls={controls} delay={1.65} text={"Frontend"} noblink />{" "}
-        <motion.div initial="hidden" animate={controls} variants={nameVariants} className="header--name--sec">
-          <TextWriting controls={controls} delay={2.85} text={"Developer"} noblink />
+        <TextWriting
+          controls={controls}
+          delay={1.65}
+          text={"Frontend"}
+          noblink
+        />{" "}
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={nameVariants}
+          className="header--name--sec"
+        >
+          <TextWriting
+            controls={controls}
+            delay={2.85}
+            text={"Engineer"}
+            noblink
+          />
           <div className="header--name--border">
             <span></span>
             <span></span>
@@ -144,5 +211,5 @@ export default function Header() {
         </motion.div>
       </h1>
     </header>
-  )
+  );
 }
