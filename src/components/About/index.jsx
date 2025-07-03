@@ -46,7 +46,7 @@ export default function About() {
       <div ref={ref} className="about--grid">
         <div className="about--bio">
           <h2>
-            <ParaWriting stagger={0.08} text={"I'm a highly motivated software engineer with a strong "} sec={"passion for website development"} />
+            <ParaWriting stagger={0.08} text={"I'm a highly motivated developer obsessed with "} sec={"turning code into seamless user experiences"} />
           </h2>
         </div>
 
@@ -64,7 +64,7 @@ export default function About() {
 
         <motion.div initial="hidden" animate={controls} variants={opacityVariant} transition={{ duration: 1, delay: 2 }} onAnimationComplete={() => handleComplete()} className="about--detail">
           <p className="theme--detail--dark">
-            <ScrambleText delay={2}>I work on extremely difficult engineering problems every day in a team consisting of some of the most talented and experienced software engineers. Continuously working towards improving my knowledge and skills to develop technologies that contribute to the betterment of society.</ScrambleText>
+            <ScrambleText delay={2}>I work on extremely difficult engineering problems every day alongside some of the most talented and experienced software engineers. Continuously working towards improving my knowledge and skills to develop technologies with a sharp eye for design, usability, and real-world impact.</ScrambleText>
           </p>
         </motion.div>
 
