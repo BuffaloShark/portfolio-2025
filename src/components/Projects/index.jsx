@@ -7,9 +7,12 @@ import ParaWriting from "../ParaWriting"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-import work1 from "../../assets/Images/work1.png"
-import work2 from "../../assets/Images/work2.png"
-import work3 from "../../assets/Images/work3.png"
+import work1 from "../../assets/Images/SkinstricScreenshot1.png"
+import work2 from "../../assets/Images/UltraverseScreenshot.png"
+import work3 from "../../assets/Images/CinemaScreenshot.png"
+import work4 from "../../assets/Images/LibraryScreenshot.png"
+import work5 from "../../assets/Images/TreactScreenshot.png"
+import work6 from "../../assets/Images/PortfolioScreenshot.png"
 
 export default function Projects() {
   const controls = useAnimation()
@@ -29,25 +32,52 @@ export default function Projects() {
 
   const works = [
     {
-      client: "client name",
-      year: "2023",
+      client: "Skinstric AI",
+      demoLink: "https://skinstric-ai-tau.vercel.app/",
+      year: "2025",
       img: work1,
-      title: "Revamping Global Lifestyle Brand.",
-      detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: "Revamping Global Beauty Brand with AI.",
+      detail: "A responsive React-based web app that captures user's 'faces. Analyzes skin tone and texture with an AI API, generating personalized beauty product recommendations with real-time feedback. Leveraged JavaScript, HTML, and CSS for dynamic UI, and organized demographic insights.",
     },
     {
-      client: "client name",
-      year: "2023",
+      client: "Ultraverse NFT World",
+      demoLink: "https://mike-intership.vercel.app/",
+      year: "2025",
       img: work2,
-      title: "Next generation Web Management System.",
-      detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: "Next generation NFT Management System.",
+      detail: "Built over 15 reusable React components, pulled in NFT data for 1,000+ assets using Axios and RESTful APIs, and set up secure login and database management with Firebase. Designed mobile-first layouts with CSS Grid and Flexbox, making sure everything looked great on 98% of devices.",
     },
     {
-      client: "client name",
-      year: "2023",
+      client: "Cinema Entertainment Database",
+      demoLink: "https://omdb-react-seven.vercel.app/",
+      year: "2025",
       img: work3,
-      title: "Share your Life Stories. Generationally.",
-      detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: "Comprehensive Movie database.",
+      detail: "Fetched and handled API data using Axios to deliver real-time search results with dynamic routing. Added smooth loading states and UI polish using CSS animations and thoughtful component structure for a clean, user-friendly experience across all devices. And users can easily add and remove their favorites to a list!",
+    },
+    {
+      client: "Library",
+      demoLink: "https://library-react-gamma-ivory.vercel.app/",
+      year: "2025",
+      img: work4,
+      title: "Where book buying meets innovation.",
+      detail: "Built a fully functional online bookstore using React, HTML, CSS, and JavaScript—complete with a working shopping cart. Used hooks, event handlers, and dynamic routing to manage everything from browsing to checkout—and beautifully responsive for mobile devices doesn't hurt.",
+    },
+    {
+      client: "Treact",
+      demoLink: "https://treact-chi.vercel.app/",
+      year: "2025",
+      img: work5,
+      title: "Design-driven business templates.",
+      detail: "Designed and built a fully responsive business website using HTML and CSS. Styled with Flexbox and grounded in a custom brand concept, the site adapts cleanly across devices and showcases a polished, professional layout.",
+    },
+    {
+      client: "Slick Portfolio Sites",
+      demoLink: "https://my-portfolio-p9r3.vercel.app/",
+      year: "2024",
+      img: work6,
+      title: "Portfolios with bells and whistles.",
+      detail: "I build sleek, responsive portfolio sites in React. This one includes features like a smooth light/dark mode toggle, subtly animated backgrounds, toggled modals for detailed project views, and a fully functional contact form. If you need a site that’s both polished and engaging, I’ve got you covered.",
     },
   ]
 
